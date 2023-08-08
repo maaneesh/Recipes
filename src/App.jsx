@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Fetch from './components/Fetch'
 import Joke from './components/Joke'
 import Wine from './components/Wine'
+import WineDisplay from './components/WineDisplay'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,9 +9,8 @@ function App() {
   return (
     <>
      <Wine/>
-     <Fetch/>
-
-    </>
+     <WineDisplay/>
+     </>
   )
 }
 
