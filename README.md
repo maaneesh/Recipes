@@ -10,5 +10,5 @@ Currently, two official plugins are available:
 
 # Wine Search App
 
-## Uses Recipe - Food - Nutrition API
- from [rapidapi.com] 
+## Technologies Used 
+** Recipe - Food - Nutrition API ** from [rapidapi.com] 
