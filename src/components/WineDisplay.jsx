@@ -1,16 +1,22 @@
 import React from 'react'
 
 
-function WineDisplay() {
+function WineDisplay({wine}) {
 
   const apiGet = (e) => {
     console.log('Click Event');
   }
 
+  console.log(wine);
+
 
   return (
-    <div>WineDisplay
- 
+    <div>
+     
+      {/* <h2>{wine.title}</h2> */}
+      <p>description</p>
+      <p>price</p>
+
     </div>
   )
 }
