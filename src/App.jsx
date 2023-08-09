@@ -28,31 +28,32 @@ function App() {
     console.log({ form });
   }
 
+  const [chosen, setChosen] =useState({});
 
   async function getRecommendation(e){
+        e.preventDefault();
 
-    e.preventDefault();
-
-
-    useEffect(() => {
-      fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/recommendation?wine=${form.type}&maxPrice=${form.maxPrice}&minRating=${form.minRating}&number=3`, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-          'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setForm({ data: data.recommendedWines[0] });
-        })
-        .catch((error) => { console.log(error) });
-  
-    }, []);
+        if (form.type == '' || form.maxPrice =='' || form.minRating ==''){
+          alert('add values');
+        } else {
+          try {
+            const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/recommendation?wine=${form.type}&maxPrice=${form.maxPrice}&minRating=${form.minRating}&number=3`, {
+                    method: 'GET',
+                    headers: {
+                      'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+                      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+                    },
+                  })
+                  const data = await response.json();
+                  setChosen(data.recommendedWines[0]);
+                  // setForm({ data: data.recommendedWines[0]});
+                  // console.log(data);
+            
+          } catch (error) {
+            console.log(error)
+          }
+        }
   }
-
-
-
 
     return (
       <>
@@ -65,7 +66,8 @@ function App() {
           &nbsp; &nbsp; &nbsp;
           <button  onClick={getRecommendation}>Submit</button>
         </form>
-  
+
+        <WineDisplay wine={chosen}/>
       </>
     )
   }
