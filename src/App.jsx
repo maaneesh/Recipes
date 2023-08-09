@@ -10,7 +10,24 @@ function App() {
 
   });
 
- 
+  const handleChange = (e)=>{
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if ( name == 'type'){
+      setForm({...form, type: value})
+    }
+    if ( name == 'price'){
+      setForm({...form, maxPrice: value})
+     
+    }
+    if ( name == 'rating'){
+      setForm({...form, minRating: value})
+    }
+
+    console.log({ form });
+  }
+
  
 
   useEffect(() => {
