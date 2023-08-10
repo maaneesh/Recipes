@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const recommendationsStyle = {
@@ -11,32 +11,46 @@ const recommendationsStyle = {
 const nameStyle = {
   fontSize: '2em',
   fontStyle: 'italic',
+  padding:'5px 5px',
+
 
 }
 const descriptionStyle = {
-  fontWeight:'normal' ,
+  fontFamily: "Lato",
+  fontSize: '1.2rem',
+  fontStyle: 'italic',
+
+  padding:'5px 5px',
+
   
 }
 const priceStyle = {
-  fontSize: '2em',
+  fontFamily: "Lato",
+  fontSize: '1.8em',
   fontWeight:'normal' ,
+  padding:'5px 5px',
   
+}
+const ratingStyle = {
+  fontFamily: "Lato",
+  fontSize: '1.5rem',
+  fontWeight:'normal' ,
+  padding:'5px 5px',
+
 }
 // const Title = styled.h1`
 // 
 // `
 
 function WineDisplay({wine}) {
-
   // console.log(wine);
   return (
     <div style={recommendationsStyle}>
-     
       <img src={wine.imageUrl}/>
       <div style={nameStyle}>{wine.title}</div>
       <div style={descriptionStyle}>{wine.description}</div>
       <div style={priceStyle}>{wine.price}</div>
-      <div>{wine.averageRating}</div>
+      <div style={ratingStyle}>{wine.averageRating}</div>
 
     </div>
   )

@@ -1,7 +1,9 @@
 import React from 'react'
 
 const headerStyle = {
+    fontFamily: 'Lato',
     width: '100%',
+    fontSize: '1.5rem',
 }
 
 function Header() {
