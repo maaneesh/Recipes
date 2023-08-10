@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react'
 import WineDisplay from './components/WineDisplay'
 
+
+
+
+const webpageStyle = {
+  height: '100%',
+  backgroundColor: "white",
+  margin: "0 auto",
+  maxWidth: "1200px",
+  padding: "20px"
+}
+
 function App() {
 
   const [form, setForm] = useState({
@@ -45,7 +56,7 @@ function App() {
                     },
                   })
                   const data = await response.json();
-                  setChosen(data.recommendedWines[0]);
+                  setChosen(data.recommendedWines[2]);
                   // setForm({ data: data.recommendedWines[0]});
                   // console.log(data);
             
@@ -56,7 +67,7 @@ function App() {
   }
 
     return (
-      <>
+      <div style={webpageStyle}>
         <form>
           <input type='text' name='type' placeholder='Wine Type' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
@@ -68,7 +79,7 @@ function App() {
         </form>
 
         <WineDisplay wine={chosen}/>
-      </>
+      </div>
     )
   }
  
