@@ -6,7 +6,7 @@ const headerStyle = {
 
 function Header() {
   return (
-    <div>
+    <div style={headerStyle}>
         <h1>Wine Search</h1>
     </div>
   )

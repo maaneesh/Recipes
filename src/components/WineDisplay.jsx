@@ -3,14 +3,24 @@ import React from 'react'
 
 const recommendationsStyle = {
 
-  backgroundColor: "red",
+  backgroundColor: "#F9F1F0",
   padding: '20px 20px',
 
 
 }
 const nameStyle = {
   fontSize: '2em',
+  fontStyle: 'italic',
 
+}
+const descriptionStyle = {
+  fontWeight:'normal' ,
+  
+}
+const priceStyle = {
+  fontSize: '2em',
+  fontWeight:'normal' ,
+  
 }
 // const Title = styled.h1`
 // 
@@ -24,8 +34,8 @@ function WineDisplay({wine}) {
      
       <img src={wine.imageUrl}/>
       <div style={nameStyle}>{wine.title}</div>
-      <div>{wine.description}</div>
-      <div>{wine.price}</div>
+      <div style={descriptionStyle}>{wine.description}</div>
+      <div style={priceStyle}>{wine.price}</div>
       <div>{wine.averageRating}</div>
 
     </div>
