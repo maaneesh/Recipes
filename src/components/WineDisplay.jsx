@@ -8,7 +8,13 @@ const recommendationsStyle = {
 
 
 }
+const nameStyle = {
+  fontSize: '2em',
 
+}
+// const Title = styled.h1`
+// 
+// `
 
 function WineDisplay({wine}) {
 
@@ -16,11 +22,11 @@ function WineDisplay({wine}) {
   return (
     <div style={recommendationsStyle}>
      
-    <img src={wine.imageUrl}/>
-      <p>{wine.title}</p>
-      <p>{wine.description}</p>
-      <p>{wine.price}</p>
-      <p>{wine.averageRating}</p>
+      <img src={wine.imageUrl}/>
+      <div style={nameStyle}>{wine.title}</div>
+      <div>{wine.description}</div>
+      <div>{wine.price}</div>
+      <div>{wine.averageRating}</div>
 
     </div>
   )

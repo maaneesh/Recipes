@@ -12,6 +12,10 @@ const webpageStyle = {
   maxWidth: "1200px",
   padding: "20px"
 }
+const searchStyle = {
+  padding: "5px",
+
+}
 
 function App() {
 
@@ -22,69 +26,70 @@ function App() {
 
   });
 
-  const handleChange = (e)=>{
+  const handleChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    if ( name == 'type'){
-      setForm({...form, type: value})
+    if (name == 'type') {
+      setForm({ ...form, type: value })
     }
-    if ( name == 'price'){
-      setForm({...form, maxPrice: value})
-     
+    if (name == 'price') {
+      setForm({ ...form, maxPrice: value })
+
     }
-    if ( name == 'rating'){
-      setForm({...form, minRating: value})
+    if (name == 'rating') {
+      setForm({ ...form, minRating: value })
     }
 
     console.log({ form });
   }
 
-  const [chosen, setChosen] =useState({});
+  const [chosen, setChosen] = useState({});
 
-  async function getRecommendation(e){
-        e.preventDefault();
+  async function getRecommendation(e) {
+    e.preventDefault();
 
-        if (form.type == '' || form.maxPrice =='' || form.minRating ==''){
-          alert('add values');
-        } else {
-          try {
-            const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/recommendation?wine=${form.type}&maxPrice=${form.maxPrice}&minRating=${form.minRating}&number=3`, {
-                    method: 'GET',
-                    headers: {
-                      'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-                      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-                    },
-                  })
-                  const data = await response.json();
-                  setChosen(data.recommendedWines[2]);
-                  // setForm({ data: data.recommendedWines[0]});
-                  // console.log(data);
-            
-          } catch (error) {
-            console.log(error)
-          }
-        }
+    if (form.type == '' || form.maxPrice == '' || form.minRating == '') {
+      alert('add values');
+    } else {
+      try {
+        const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/wine/recommendation?wine=${form.type}&maxPrice=${form.maxPrice}&minRating=${form.minRating}&number=3`, {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
+            'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+          },
+        })
+        const data = await response.json();
+        setChosen(data.recommendedWines[0]);
+        // setForm({ data: data.recommendedWines[0]});
+        // console.log(data);
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 
-    return (
-      <div style={webpageStyle}>
-        <Header/>
+  return (
+    <div style={webpageStyle}>
+      <Header />
+      <div style={searchStyle}>
         <form>
           <input type='text' name='type' placeholder='Wine Type' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <input type='text' name='price' placeholder='Max Price' onChange={handleChange}/>
+          <input type='text' name='price' placeholder='Max Price' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <input type='text' name='rating' placeholder='Rating (0 - 1.0)' onChange={handleChange}/>
+          <input type='text' name='rating' placeholder='Rating (0 - 1.0)' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <button  onClick={getRecommendation}>Submit</button>
+          <button onClick={getRecommendation}>Submit</button>
         </form>
-
-        <WineDisplay wine={chosen}/>
       </div>
-    )
-  }
- 
+      <WineDisplay wine={chosen} />
+    </div>
+  )
+}
+
 
 
 
