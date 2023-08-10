@@ -44,7 +44,7 @@ function App() {
     console.log({ form });
   }
 
-  const [chosen, setChosen] = useState({});
+  const [chosen, setChosen] = useState([]);
 
   async function getRecommendation(e) {
     e.preventDefault();
@@ -61,7 +61,7 @@ function App() {
           },
         })
         const data = await response.json();
-        setChosen(data.recommendedWines[0]);
+        setChosen(data.recommendedWines);
         // setForm({ data: data.recommendedWines[0]});
         // console.log(data);
 

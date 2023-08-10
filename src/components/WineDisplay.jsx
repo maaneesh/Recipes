@@ -43,16 +43,23 @@ const ratingStyle = {
 // `
 
 function WineDisplay({wine}) {
-  // console.log(wine);
-  return (
-    <div style={recommendationsStyle}>
-      <img src={wine.imageUrl}/>
-      <div style={nameStyle}>{wine.title}</div>
-      <div style={descriptionStyle}>{wine.description}</div>
-      <div style={priceStyle}>{wine.price}</div>
-      <div style={ratingStyle}>{wine.averageRating}</div>
 
-    </div>
+  // console.log(wine);
+
+  return (
+    wine.map((wine)=> {
+      return(
+        <div style={recommendationsStyle}>
+        <img src={wine.imageUrl}/>
+        <div style={nameStyle}>{wine.title}</div>
+        <div style={descriptionStyle}>{wine.description}</div>
+        <div style={priceStyle}>{wine.price}</div>
+        <div style={ratingStyle}>{wine.averageRating}</div>
+  
+      </div>
+      )
+    })
+   
   )
 
 }
