@@ -1,11 +1,20 @@
 import React from 'react'
 
 
+const recommendationsStyle = {
+
+  backgroundColor: "red",
+  padding: '20px 20px',
+
+
+}
+
+
 function WineDisplay({wine}) {
 
   // console.log(wine);
   return (
-    <div>
+    <div style={recommendationsStyle}>
      
     <img src={wine.imageUrl}/>
       <p>{wine.title}</p>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import WineDisplay from './components/WineDisplay'
+import Header from './components/Header';
 
 
 
@@ -68,12 +69,13 @@ function App() {
 
     return (
       <div style={webpageStyle}>
+        <Header/>
         <form>
           <input type='text' name='type' placeholder='Wine Type' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
           <input type='text' name='price' placeholder='Max Price' onChange={handleChange}/>
           &nbsp; &nbsp; &nbsp;
-          <input type='text' name='rating' placeholder='Rating' onChange={handleChange}/>
+          <input type='text' name='rating' placeholder='Rating (0 - 1.0)' onChange={handleChange}/>
           &nbsp; &nbsp; &nbsp;
           <button  onClick={getRecommendation}>Submit</button>
         </form>
