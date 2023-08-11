@@ -38,14 +38,8 @@ const ratingStyle = {
   padding:'5px 5px',
 
 }
-// const Title = styled.h1`
-// 
-// `
 
 function WineDisplay({wine}) {
-
-  // console.log(wine);
-
   return (
     wine.map((wine)=> {
       return(

@@ -13,7 +13,9 @@ const webpageStyle = {
   padding: "20px"
 }
 const searchStyle = {
-  padding: "5px",
+  backgroundColor: "#F9F1F0",
+  padding:'10px 10px 10px 10px',
+  margin:'0',
 
 }
 
@@ -80,7 +82,7 @@ function App() {
           &nbsp; &nbsp; &nbsp;
           <label>Maximum Price&nbsp;</label>
 
-          <input type='text' name='price' placeholder='$' onChange={handleChange} />
+          <input type='number' name='price' placeholder='$' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
           <label>Rating&nbsp;</label>
           <input type='number' name='rating' min='0' max='1' step={.25} placeholder='0.8' onChange={handleChange} />
