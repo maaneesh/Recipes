@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const recommendationsStyle = {
 
-  backgroundColor: "#E9DDD4",
+  backgroundColor: "#F9F1F0",
   padding: '20px 20px',
 
 

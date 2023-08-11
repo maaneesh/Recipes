@@ -10,7 +10,9 @@ function Header() {
   return (
     <div style={headerStyle}>
         <h1>City Winery</h1>
+        {/* <p>New York's finest since 1947.</p> */}
     </div>
+
   )
 }
 

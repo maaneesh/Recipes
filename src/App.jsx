@@ -21,8 +21,8 @@ function App() {
 
   const [form, setForm] = useState({
     type: 'chardonnay',
-    maxPrice: 15,
-    minRating: 0.3,
+    maxPrice: 50,
+    minRating: 0.8,
 
   });
 
@@ -40,7 +40,6 @@ function App() {
     if (name == 'rating') {
       setForm({ ...form, minRating: value })
     }
-
     console.log({ form });
   }
 
@@ -76,13 +75,17 @@ function App() {
       <Header />
       <div style={searchStyle}>
         <form>
-          <input type='text' name='type' placeholder='Wine Type' onChange={handleChange} />
+          <label>Wine Type&nbsp;</label>
+          <input type='text' name='type' placeholder='Ex. Merlot' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <input type='text' name='price' placeholder='Max Price' onChange={handleChange} />
+          <label>Maximum Price&nbsp;</label>
+
+          <input type='text' name='price' placeholder='$' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <input type='text' name='rating' placeholder='Rating (0 - 1.0)' onChange={handleChange} />
+          <label>Rating&nbsp;</label>
+          <input type='number' name='rating' min='0' max='1' step={.25} placeholder='0.8' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <button onClick={getRecommendation}>Submit</button>
+          <button onClick={getRecommendation}>Search</button>
         </form>
       </div>
       <WineDisplay wine={chosen} />
