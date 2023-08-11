@@ -3,15 +3,15 @@ import React from 'react'
 const headerStyle = {
     fontFamily: 'Lato',
     width: '100%',
-    backgroundColor: "#F9F1F0",
-    color: '#50006C',
+    padding: '10px 0',
+    backgroundColor: "#E3E8E9",
+    color: '#00735C',
     fontSize: '1.5rem',
 }
 const subHeaderStyle = {
-    backgroundColor: "#F9F1F0",
-    margin:'10px 10px',
-    pading: '10px 10px',
-    fontSize: '0.8rem',
+    backgroundColor: "#E3E8E9",
+    margin:'-35px 10px',
+    fontSize: '1rem',
 
 
 }

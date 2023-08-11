@@ -10,12 +10,12 @@ const webpageStyle = {
   backgroundColor: "white",
   margin: "0 auto",
   maxWidth: "1200px",
-  padding: "20px"
+  padding: "0 0",
 }
 const searchStyle = {
-  backgroundColor: "#F9F1F0",
-  padding:'10px 10px 10px 10px',
-  margin:'0',
+  backgroundColor: "#E3E8E9",
+  padding:'30px 10px',
+  margin:'auto',
 
 }
 
@@ -77,10 +77,10 @@ function App() {
       <Header />
       <div style={searchStyle}>
         <form>
-          <label>Wine Type&nbsp;</label>
+          <label>Wine type&nbsp;</label>
           <input type='text' name='type' placeholder='Ex. Merlot' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <label>Maximum Price&nbsp;</label>
+          <label>Maximum price&nbsp;</label>
 
           <input type='number' name='price' placeholder='$' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
