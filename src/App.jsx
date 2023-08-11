@@ -3,26 +3,26 @@ import WineDisplay from './components/WineDisplay'
 import Header from './components/Header';
 
 
-
-
 const webpageStyle = {
   height: '100%',
-  backgroundColor: "white",
+  backgroundColor: "#606462",
   margin: "0 auto",
   maxWidth: "1200px",
-  padding: "0 0",
+
 }
 const searchStyle = {
   backgroundColor: "#E3E8E9",
   padding:'30px 10px',
   margin:'auto',
+  fontSize: '1.2rem',
+  color: '#340744',
 
 }
 
 function App() {
 
   const [form, setForm] = useState({
-    type: 'chardonnay',
+    type: '',
     maxPrice: 50,
     minRating: 0.8,
 
@@ -45,7 +45,7 @@ function App() {
     console.log({ form });
   }
 
-  const [chosen, setChosen] = useState([]);
+  const [wines, setWines] = useState([]);
 
   async function getRecommendation(e) {
     e.preventDefault();
@@ -62,10 +62,7 @@ function App() {
           },
         })
         const data = await response.json();
-        setChosen(data.recommendedWines);
-        // setForm({ data: data.recommendedWines[0]});
-        // console.log(data);
-
+        setWines(data.recommendedWines);
       } catch (error) {
         console.log(error)
       }
@@ -90,7 +87,7 @@ function App() {
           <button onClick={getRecommendation}>Search</button>
         </form>
       </div>
-      <WineDisplay wine={chosen} />
+      <WineDisplay wine={wines} />
     </div>
   )
 }
