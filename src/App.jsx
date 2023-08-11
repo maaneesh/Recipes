@@ -74,15 +74,15 @@ function App() {
       <Header />
       <div style={searchStyle}>
         <form>
-          <label>Wine type&nbsp;</label>
+          <label>Variety&nbsp;</label>
           <input type='text' name='type' placeholder='Ex. Merlot' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <label>Maximum price&nbsp;</label>
+          <label>Price (max.)&nbsp;</label>
 
           <input type='number' name='price' placeholder='$' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
           <label>Rating&nbsp;</label>
-          <input type='number' name='rating' min='0' max='1' step={.25} placeholder='0.8' onChange={handleChange} />
+          <input type='number' name='rating' min='0' max='1' step={.05} placeholder='0.80' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
           <button onClick={getRecommendation}>Search</button>
         </form>

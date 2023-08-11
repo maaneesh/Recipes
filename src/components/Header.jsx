@@ -9,6 +9,7 @@ const headerStyle = {
 }
 const titleStyle = {
     fontFamily: 'Lato',
+    fontStyle: 'italic',
     padding: '0 10px',
     color: '#B21368',
     fontSize: '4rem',
@@ -19,7 +20,7 @@ const subtitleStyle = {
     margin:'-35px 10px',
     padding: '0 10px',
     fontSize: '1.2rem',
-    color: '#5F093D',
+    color: '#750075',
     fontStyle: 'oblique 10deg',
     
 }
@@ -27,7 +28,7 @@ const subtitleStyle = {
 function Header() {
   return (
     <div style={headerStyle}>
-        <h1 style={titleStyle}>City Winery</h1>
+        <h1 style={titleStyle}>City Wineshop</h1>
         <div style={subtitleStyle}><p>Serving New York since 1947.</p>
         </div>
     </div>
