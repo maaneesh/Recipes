@@ -12,3 +12,9 @@ Currently, two official plugins are available:
 
 ## Technologies Used 
 **Recipe - Food - Nutrition API** from [rapidapi.com] 
+
+
+## Required Parameters
+**Wine Type** - Type of wine you would like to search for
+**Max Price** - How much you want to spend in dollars
+**Minimum RAting** - Rating for the wine.  
