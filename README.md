@@ -15,6 +15,6 @@ Currently, two official plugins are available:
 
 
 ## Required Parameters
-**Wine Type** - Type of wine you would like to search for
-**Max Price** - How much you want to spend in dollars
-**Minimum RAting** - Rating for the wine.  
+-**Wine Type** - Type of wine you would like to search for
+-**Max Price** - How much you want to spend in dollars
+-**Minimum Rating** - Rating for the wine.  
