@@ -14,6 +14,8 @@ const titleStyle = {
     color: '#B21368',
     fontSize: '4rem',
     fontWeight:'bold',
+    textShadow: '2px 2px 5px #750075',
+
    
 }
 const subtitleStyle = {

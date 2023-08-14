@@ -5,6 +5,7 @@ const recommendationsStyle = {
 
   backgroundColor: "#F9F1F0",
   padding: '20px 20px',
+ 
 
 }
 
