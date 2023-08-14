@@ -20,6 +20,16 @@ const searchStyle = {
 
 }
 
+const buttonStyle = {
+  cursor: 'pointer',
+  color: '#B21368',
+  shadow: ' #750075',
+  fontWeight: 'bold',
+
+
+
+}
+
 function App() {
 
   const [form, setForm] = useState({
@@ -85,7 +95,7 @@ function App() {
           <label>Rating&nbsp;</label>
           <input type='number' name='rating' min='0' max='1' step={.05} placeholder='0.80' onChange={handleChange} />
           &nbsp; &nbsp; &nbsp;
-          <button onClick={getRecommendation}>Search</button>
+          <button  style= {buttonStyle} onClick={getRecommendation}>Search</button>
         </form>
       </div>
       <WineDisplay wine={wines} />
