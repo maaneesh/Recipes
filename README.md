@@ -18,3 +18,7 @@ Currently, two official plugins are available:
 -**Wine Type** - Type of wine you would like to search for  <br/>
 -**Max Price** - How much you want to spend in dollars  <br/>
 -**Minimum Rating** - Rating for the wine.  <br/>
+
+## Color Theme
+`#B21368` <br/>
+`#750075` <br/>
