@@ -15,6 +15,7 @@ const searchStyle = {
   padding:'30px 10px',
   margin:'auto',
   fontSize: '1.2rem',
+  fontWeight: 'bold',
   color: '#340744',
 
 }
